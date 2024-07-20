@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>X O</title>
+</head>
+<body>
+    <div class="page">
+
+        <div class="board , menu" id="menu">
+            <div style="display: flex;"> 
+                <p style="color: #84f306; font-size: 50px;">X</p>&nbsp;
+                <p style="font-size: 50px;">O</p>
+            </div>
+            <br>
+            <div class="mode">
+                <button onclick="start_pvc('start')" class="game-mode , button1">player vs computer</button>
+                <button onclick="start_pvp()" class="game-mode , button2">player vs player</button>
+            </div>
+            <input type="checkbox" id="computer">
+        </div>
+
+        <div class="board , dif" id="dif">
+            <p>Choose your difficulty</p>
+            <button id="baby-pc" class="game-mode , button2" onclick="start_pvc('baby')">Baby</button>
+            <input type="checkbox" id="baby">
+            <br>
+            <button id="normal-pc" class="game-mode , button1" onclick="start_pvc('normal')">Normal</button>
+            <input type="checkbox" id="normal">
+        </div>
+
+        <div class="board">
+            <div class="game">
+                <div class="game-board">
+                    <button onclick="turn(1)" id="cell1" class="cells , top , left"></button>
+                    <button onclick="turn(2)" id="cell2" class="cells , top"></button>
+                    <button onclick="turn(3)" id="cell3" class="cells , top , right"></button>
+                    <button onclick="turn(4)" id="cell4" class="cells , left"></button>
+                    <button onclick="turn(5)" id="cell5" class="cells"></button>
+                    <button onclick="turn(6)" id="cell6" class="cells , right"></button>
+                    <button onclick="turn(7)" id="cell7" class="cells , bot , left"></button>
+                    <button onclick="turn(8)" id="cell8" class="cells , bot"></button>
+                    <button onclick="turn(9)" id="cell9" class="cells , bot , right"></button>
+                    <hr id="win1"><hr id="win2"><hr id="win3"><hr id="win4"><hr id="win5"><hr id="win6"><hr id="win7"><hr id="win8">
+                    <div>
+                        <p class="x-win" id="x_wins">X : 0</p>
+                        <p class="o-win" id="o_wins">O : 0</p>
+                    </div>
+                </div>
+                <div class="screen" id="screen">player turn</div>
+                <button id="reset" class="reset" onclick="reset_game()"><svg class="again" width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Edit / Redo"> <path id="Vector" d="M13.9998 8H18.9998V3M18.7091 16.3569C17.7772 17.7918 16.4099 18.8902 14.8079 19.4907C13.2059 20.0913 11.4534 20.1624 9.80791 19.6937C8.16246 19.225 6.71091 18.2413 5.66582 16.8867C4.62073 15.5321 4.03759 13.878 4.00176 12.1675C3.96593 10.4569 4.47903 8.78001 5.46648 7.38281C6.45392 5.98561 7.86334 4.942 9.48772 4.40479C11.1121 3.86757 12.8661 3.86499 14.4919 4.39795C16.1177 4.93091 17.5298 5.97095 18.5209 7.36556" stroke="#fff5ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg></button>
+                <button id="back" class="back" onclick="back_to_menu()"><svg fill="#fff5ee" width="64px" height="64px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="#fff5ee"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M27 18.039L16 9.501 5 18.039V14.56l11-8.54 11 8.538v3.481zm-2.75-.31v8.251h-5.5v-5.5h-5.5v5.5h-5.5v-8.25L16 11.543l8.25 6.186z"></path></g></svg></button>
+            </div>
+        </div>
+
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
